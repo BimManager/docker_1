@@ -1,0 +1,13 @@
+#docker pull python:2-slim
+
+docker kill Abathur 
+docker rm Abathur
+
+docker build . -t 19
+
+docker run \
+	   --name Abathur \
+	   --volume "$HOME":/root \
+	   --publish 3000:3000 \
+	   --detach \
+	   19

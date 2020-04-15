@@ -1,0 +1,8 @@
+# docker pull debian
+# docker run --interactive --tty --rm debian
+
+apt-get upgrade
+apt-get update
+apt-get install git
+apt-get install gcc
+apt-get install ed | emacs-nox | vim

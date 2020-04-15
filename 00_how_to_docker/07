@@ -1,0 +1,2 @@
+docker container inspect overlord | egrep -m1 '"IPAddress"' | tr -d ,
+# docker exec overloard hostname -i

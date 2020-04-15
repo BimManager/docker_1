@@ -1,0 +1,15 @@
+# https://www.ntweekly.com/2019/09/20/running-wordpress-and-mysql-on-docker-containers/
+docker run \
+	--detach \
+	--name lair \
+	--publish 8080:80 \
+	--link spawning-pool:mysql \
+	--env WORDPRESS_DB_PASSWORD=Kerrigan \
+	wordpress:latest
+
+#	--env WORDPRESS_DB_HOST=db:3306 \
+#	--env WORDPRESS_DB_NAME=zerglings \
+#	--env WORDPRESS_DB_USER=wordpress \
+#	--env WORDPRESS_DB_PASSWORD=wordpress \
+#	--env WORDPRESS_DB_HOST=mysql \
+

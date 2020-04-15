@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+ php-apache:
+  image: php:7.2-apache
+  ports:
+   - "80:80"
+  volumes:
+   - /Users/Shared:/var/www/html
+  links:
+   - "mariadb"
+
+ mariadb:
+  image: mariadb:latest
+  restart: on-failure
+  volumes:
+   - mariadb:/var/lib/mysql
+  environment:
+   MYSQL_USER: forty_two
+   MYSQL_PASSWORD: forty_two
+   MYSQL_ROOT_PASSWORD: forty_two
+   MYSQL_DATABASE: db
+volumes:
+ mariadb:
+

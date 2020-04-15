@@ -1,0 +1,5 @@
+CMD=$(docker swarm join-token worker | egrep 'docker' | sed 's/ *//')
+echo $CMD | pbcopy
+eval $(docker-machine env Aiur)
+pbcopy
+

@@ -1,0 +1,8 @@
+docker pull phpmyadmin/phpmyadmin
+docker run \
+	--detach \
+	--name roach-warden \
+	--publish 8081:80 \
+	--link spawning-pool:db \
+	--env MYSQL_ROOT_PASSWORD=Kerrigan \
+	phpmyadmin/phpmyadmin

@@ -1,0 +1,1 @@
+docker image rm --force $(docker image ls | sed '1d' | awk '{print $3}' | tr '\n' ' ')

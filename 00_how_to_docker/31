@@ -1,0 +1,1 @@
+docker service rm $(docker service ls | sed '1d' | cut -d' ' -f1 | tr '\n' ' ')

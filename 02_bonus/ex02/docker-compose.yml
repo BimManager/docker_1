@@ -1,0 +1,23 @@
+version: '3'
+services:
+ client:
+  build: ./angular-client
+  volumes:
+   - ./angular-client:/var/www/app
+  ports:
+   - "4200:4200"
+
+ server:
+  build: ./express-server
+  volumes:
+   - ./express-server/client:/var/www/app
+  ports:
+   - "3000:3000"
+  links:
+   - database
+
+ database:
+  image: mongo:latest
+  restart: always
+  ports:
+   - "27017:27017"

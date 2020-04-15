@@ -1,0 +1,1 @@
+docker rm --force $(docker ps | sed '1d' | cut -d' ' -f1 | tr '\n' ' ')
